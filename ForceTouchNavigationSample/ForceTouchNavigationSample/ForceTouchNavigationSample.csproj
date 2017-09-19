@@ -159,11 +159,15 @@
     </Compile>
     <Compile Include="Setup.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\ChildViewModel.cs" />
+    <Compile Include="ViewModels\DetailsViewModel.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="DataAccess\IEmployeesProvider.cs" />
     <Compile Include="DataAccess\EmployeesProvider.cs" />
     <Compile Include="MvxApp.cs" />
+    <Compile Include="DetailsViewController.cs" />
+    <Compile Include="DetailsViewController.designer.cs">
+      <DependentUpon>DetailsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="mock_data.json">

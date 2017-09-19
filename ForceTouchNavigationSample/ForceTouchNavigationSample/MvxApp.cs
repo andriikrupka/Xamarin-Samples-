@@ -12,7 +12,7 @@ namespace ForceTouchNavigationSample
             base.Initialize();
             Mvx.ConstructAndRegisterSingleton<IEmployeesProvider, EmployeesProvider>();
             Mvx.RegisterType<MainViewModel, MainViewModel>();
-            Mvx.RegisterType<ChildViewModel, ChildViewModel>();
+            Mvx.RegisterType<DetailsViewModel, DetailsViewModel>();
             RegisterAppStart<MainViewModel>();
         }
     }
