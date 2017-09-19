@@ -12,11 +12,11 @@ namespace ForceTouchNavigationSample
 {
 	[MvxFromStoryboard("Main")]
 	[MvvmCross.iOS.Views.Presenters.Attributes.MvxChildPresentation]
-	public partial class DetailsViewController : MvxTableViewController<DetailsViewModel>
+	public partial class DetailViewController : MvxTableViewController<DetailsViewModel>
 	{
 		private MvxImageViewLoader _imageLoader;
 
-		public DetailsViewController (IntPtr handle) : base (handle)
+		public DetailViewController (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -35,7 +35,7 @@ namespace ForceTouchNavigationSample
 			TableView.RowHeight = UITableView.AutomaticDimension;
 			TableView.EstimatedRowHeight = 40;
 
-			var set = this.CreateBindingSet<DetailsViewController, DetailsViewModel>();
+			var set = this.CreateBindingSet<DetailViewController, DetailsViewModel>();
             set.Bind(FullNameTitle).To(x => x.Emplyee.FullName);
 			set.Bind(EmailLabel).To(x => x.Emplyee.Email);
 			set.Bind(PositionLabel).To(x => x.Emplyee.Position);

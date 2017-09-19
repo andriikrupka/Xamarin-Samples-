@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace ForceTouchNavigationSample
 {
-	[Register ("DetailsViewController")]
-	partial class DetailsViewController
+	[Register ("DetailViewController")]
+	partial class DetailViewController
 	{
 		[Outlet]
 		UIKit.UIImageView AvatarImageView { get; set; }

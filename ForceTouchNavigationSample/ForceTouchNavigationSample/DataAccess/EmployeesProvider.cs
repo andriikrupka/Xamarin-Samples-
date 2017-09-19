@@ -6,7 +6,7 @@ namespace ForceTouchNavigationSample.DataAccess
 {
     public class EmployeesProvider : IEmployeesProvider
     {
-        private const string FilePath = "mock_data.json";
+        private const string FilePath = "ForceTouchNavigationSample.mock_data.json";
 
         public List<Employee> GetEmployees()
         {

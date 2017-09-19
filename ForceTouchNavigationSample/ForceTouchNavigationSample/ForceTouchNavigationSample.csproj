@@ -155,7 +155,7 @@
     </Compile>
     <Compile Include="Setup.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\DetailsViewModel.cs" />
+    <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="DataAccess\IEmployeesProvider.cs" />
     <Compile Include="DataAccess\EmployeesProvider.cs" />
@@ -166,9 +166,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="mock_data.json">
+    <Content Include="mock_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+      <LogicalName>ForceTouchNavigationSample.mock_data.json</LogicalName>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
