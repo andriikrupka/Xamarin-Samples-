@@ -7,12 +7,12 @@ namespace ForceTouchNavigationSample.ViewModels
     public class DetailsViewModel : MvxViewModel<Employee>
     {
         private Employee employee;
-       
+
         public DetailsViewModel()
         {
         }
 
-        public Employee Emplyee 
+        public Employee Emplyee
         {
             get => employee;
             set

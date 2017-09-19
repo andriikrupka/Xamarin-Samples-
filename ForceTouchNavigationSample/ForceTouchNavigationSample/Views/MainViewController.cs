@@ -8,6 +8,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.iOS.Views;
 using MvvmCross.iOS.Views.Presenters;
+using MvvmCross.iOS.Views.Presenters.Attributes;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.iOS.Views;
@@ -16,14 +17,14 @@ using UIKit;
 namespace ForceTouchNavigationSample
 {
     [MvxFromStoryboard("Main")]
-    [MvvmCross.iOS.Views.Presenters.Attributes.MvxRootPresentation(WrapInNavigationController = true)]
-    public partial class ViewController : MvxViewController<MainViewModel>, IUIViewControllerPreviewingDelegate
+    [MvxRootPresentation(WrapInNavigationController = true)]
+    public partial class MainViewController : MvxViewController<MainViewModel>, IUIViewControllerPreviewingDelegate
     {
-        private MvxIosViewPresenter _viewPresenter;
+        private IMvxIosViewPresenter _viewPresenter;
         private IMvxViewModelLoader _viewModelLoader;
         private MvxViewModelInstanceRequest _previewViewModelRequest;
 
-        protected ViewController(IntPtr handle) : base(handle)
+        protected MainViewController(IntPtr handle) : base(handle)
         { }
 
 
@@ -32,7 +33,7 @@ namespace ForceTouchNavigationSample
             base.ViewDidLoad();
 
             _viewModelLoader = Mvx.Resolve<IMvxViewModelLoader>();
-            _viewPresenter = Mvx.Resolve<IMvxIosModalHost>() as MvxIosViewPresenter;
+            _viewPresenter = Mvx.Resolve<IMvxIosViewPresenter>();
 
             if (TraitCollection.ForceTouchCapability == UIForceTouchCapability.Available)
             {
@@ -47,7 +48,7 @@ namespace ForceTouchNavigationSample
             source.DeselectAutomatically = true;
 
             TableView.Source = source;
-            var set = this.CreateBindingSet<ViewController, MainViewModel>();
+            var set = this.CreateBindingSet<MainViewController, MainViewModel>();
             set.Bind(source).For(s => s.ItemsSource).To(vm => vm.Employee);
             set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ViewDetailsCommand);
             set.Apply();
@@ -56,17 +57,6 @@ namespace ForceTouchNavigationSample
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
-
-        }
-
-
-        public void CommitViewController(IUIViewControllerPreviewing previewingContext, UIViewController viewControllerToCommit)
-        {
-            if (_previewViewModelRequest != null)
-            {
-                _viewPresenter.Show(_previewViewModelRequest);
-                _previewViewModelRequest = null;
-            }
         }
 
         public UIViewController GetViewControllerForPreview(IUIViewControllerPreviewing previewingContext, CGPoint location)
@@ -92,5 +82,14 @@ namespace ForceTouchNavigationSample
 
             return viewController;
         }
+
+		public void CommitViewController(IUIViewControllerPreviewing previewingContext, UIViewController viewControllerToCommit)
+		{
+			if (_previewViewModelRequest != null)
+			{
+				_viewPresenter.Show(_previewViewModelRequest);
+				_previewViewModelRequest = null;
+			}
+		}
     }
 }

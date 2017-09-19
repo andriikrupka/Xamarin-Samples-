@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace ForceTouchNavigationSample
 {
-	[Register ("ViewController")]
-	partial class ViewController
+	[Register ("MainViewController")]
+	partial class MainViewController
 	{
 		[Outlet]
 		UIKit.UITableView TableView { get; set; }
