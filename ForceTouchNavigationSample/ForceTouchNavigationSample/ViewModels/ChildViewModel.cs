@@ -7,6 +7,7 @@ namespace ForceTouchNavigationSample.ViewModels
     public class ChildViewModel : MvxViewModel<Employee>
     {
         private Employee employee;
+       
         public ChildViewModel()
         {
         }
