@@ -4,11 +4,11 @@ using MvvmCross.Core.ViewModels;
 
 namespace ForceTouchNavigationSample.ViewModels
 {
-    public class ChildViewModel : MvxViewModel<Employee>
+    public class DetailsViewModel : MvxViewModel<Employee>
     {
         private Employee employee;
        
-        public ChildViewModel()
+        public DetailsViewModel()
         {
         }
 

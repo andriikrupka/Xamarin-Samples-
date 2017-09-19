@@ -23,7 +23,7 @@ namespace ForceTouchNavigationSample.ViewModels
 
         private Task ViewDetailsAsync(Employee employee)
         {
-            return _navigationService.Navigate<ChildViewModel, Employee>(employee);
+            return _navigationService.Navigate<DetailsViewModel, Employee>(employee);
         }
 
         public MvxAsyncCommand<Employee> ViewDetailsCommand { get; set; }

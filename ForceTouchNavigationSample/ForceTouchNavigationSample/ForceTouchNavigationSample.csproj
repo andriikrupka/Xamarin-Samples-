@@ -153,10 +153,6 @@
     <Compile Include="Views\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChildViewController.cs" />
-    <Compile Include="Views\ChildViewController.designer.cs">
-      <DependentUpon>ChildViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Setup.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\DetailsViewModel.cs" />
@@ -164,8 +160,8 @@
     <Compile Include="DataAccess\IEmployeesProvider.cs" />
     <Compile Include="DataAccess\EmployeesProvider.cs" />
     <Compile Include="MvxApp.cs" />
-    <Compile Include="DetailsViewController.cs" />
-    <Compile Include="DetailsViewController.designer.cs">
+    <Compile Include="Views\DetailsViewController.cs" />
+    <Compile Include="Views\DetailsViewController.designer.cs">
       <DependentUpon>DetailsViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
